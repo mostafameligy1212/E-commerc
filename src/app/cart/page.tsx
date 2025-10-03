@@ -32,10 +32,10 @@ const {products , totalCartPrice} = await HandelGetUserCart();
   </div>
     <div className=" flex justify-between ">
       <Link href={"/cart/payment"}>
-      <Button className='bg-green-500 cursor-pointer mx-5'>pay</Button>
+      <Button className='bg-green-500 cursor-pointer mx-5 dark:text-white'>pay</Button>
       
       </Link>
-      <Button className='bg-black cursor-pointer'>clear all</Button>
+      <Button className='bg-black cursor-pointer dark:text-white dark:border dark:border-white'>clear all</Button>
     </div>
 </div>
 
@@ -58,7 +58,7 @@ const {products , totalCartPrice} = await HandelGetUserCart();
       <TableCell className="font-medium">
         <h3>{item.product.title}</h3>
         <div className=" w-1/4 ">
-        <img src={item.product.imageCover}  alt={item.product.title} className=' w-full block'/>
+        <img src={item.product.imageCover}  alt={item.product.title} className=' w-full block rounded-2xl'/>
 
         </div>
       </TableCell>

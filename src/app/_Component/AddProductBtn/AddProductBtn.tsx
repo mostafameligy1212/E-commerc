@@ -31,7 +31,7 @@ export default function AddProductBtn({id}:{id : string}) {
  
     return (
     <div className=''>
-          <Button disabled={pending} onClick={handelAddToCart} className="my-2 w-[80%] bg-green-500 cursor-pointer hover:!bg-green-500">
+          <Button disabled={pending} onClick={handelAddToCart} className="dark:text-white my-2 w-[80%] bg-green-500 cursor-pointer hover:!bg-green-500">
              {pending ? 
     <ClipLoader size={20} color="white" />
              

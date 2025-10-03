@@ -2,17 +2,17 @@
 import Link from 'next/link'
 import React, { useContext, useEffect, useState } from 'react'
 import { FaHeart, FaShoppingCart } from 'react-icons/fa'
-import { IoMdLogOut } from 'react-icons/io'
+import { IoMdLogOut, IoMdSunny } from 'react-icons/io'
 import { BsCart4 } from "react-icons/bs";
 import { signOut, useSession } from 'next-auth/react'
 import { getUsercart } from '_/app/_services/Cart.servises'
 import { CartContext } from '../MySessionProvider/CartContext'
+import { FaMoon } from 'react-icons/fa6'
 
 export default function Navbar() {
-
   const { data: isAuthenicated } = useSession();
   const [initialCartCount, setCartCount] = useState(0);
-  const { cartCount } = useContext(CartContext)
+  const { cartCount , dark , setDark } = useContext(CartContext)
 
   const [isOpen, setIsOpen] = useState(false); 
 
@@ -30,8 +30,8 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="bg-transparent border-gray-200 dark:!bg-black fixed top-0 w-full z-50">
-      <div className="w-[90%] md:w-[95%] max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 bg-white rounded-4xl mt-3 border border-green-500 ">
+    <nav className="bg-transparent border-gray-200  fixed top-0 w-full z-50 transition-all duration-500">
+      <div className="transition-all duration-500 w-[90%] md:w-[95%] dark:bg-black max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 bg-white rounded-4xl mt-3 border border-green-500 ">
         <Link href="/" className="flex dark:text-white items-center space-x-3 rtl:space-x-reverse">
           <FaShoppingCart color='green' size={30} />
           <p className='text-2xl'>fresh market</p>
@@ -51,7 +51,7 @@ export default function Navbar() {
 
         <div className={`${isOpen ? 'block' : 'hidden'} w-full md:w-[60%] md:flex md:justify-between md:items-center`} id="navbar-default">
           <div className="">
-            <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0   bg-transparent dark:border-gray-700">
 
               <li>
                 <Link href="/" className="block py-2 px-3 text-gray-900 rounded-sm md:bg-transparent md:p-0 dark:text-white hover:text-green-500" aria-current="page">Home</Link>
@@ -67,8 +67,19 @@ export default function Navbar() {
 
             </ul>
           </div>
-          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-red-500 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0  dark:border-gray-700">
 
+          <li className='cursor-pointer'>
+            <>
+            {
+              dark ?
+              <IoMdSunny onClick={()=>{setDark(false)}} className='dark:text-white text-black' size={25}/> 
+              :
+              <FaMoon onClick={()=>{setDark(true)}}  className='dark:text-white text-black' size={25}/>
+
+            }
+            </>
+          </li>
     {isAuthenicated && (
                 <>
                   <li>

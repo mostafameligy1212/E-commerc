@@ -30,7 +30,7 @@ export default function RemoveItemBtn({id}:{id : string}) {
 
   return (
     <>
-        <Button onClick={handelRemoveItem}  className=' bg-red-500 mx-auto mt-3 cursor-pointer'>
+        <Button onClick={handelRemoveItem}  className=' dark:text-white bg-red-500 mx-auto mt-3 cursor-pointer'>
         {
             loading ? 
             <ClipLoader size={20} color="white" />

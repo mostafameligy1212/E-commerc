@@ -95,7 +95,7 @@ export default function ResetCodeFrom() {
    
 
 
-  <Button disabled={btnLogain} className=' bg-green-500 mt-3 cursor-pointer'>
+  <Button disabled={btnLogain} className=' bg-green-500 mt-3 cursor-pointer dark:text-white hover:bg-black dark:hover:border dark:hover:border-white '>
     {btnLogain? 
     
     <ClipLoader size={20} color="white" />

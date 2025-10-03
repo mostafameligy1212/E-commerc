@@ -7,6 +7,9 @@ import Footer from "./_Component/Footer/Footer";
 import bgImage from "_/images/light-patten.svg"
 import { Toaster } from "_/components/ui/sonner";
 import MySessionProvider from "./_Component/MySessionProvider/MySessionProvider";
+import { useContext } from "react";
+
+import AppBody from "./_Component/AppBody/AppBody"
 
 
 const geistSans = Geist({
@@ -29,15 +32,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
+      {/* <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased  `}
         style={{backgroundImage:`url(${bgImage.src})`}}
       >
-
           <MySessionProvider>
-
           <Navbar/>
           <div className="min-h-screen mt-20">
             {children}
@@ -47,7 +49,14 @@ export default function RootLayout({
 
           </MySessionProvider>
 
-      </body>
+      </body> */}
+      <MySessionProvider>
+
+      <AppBody>
+        {children}
+      </AppBody>
+
+      </MySessionProvider>
     </html>
   );
 }

@@ -29,7 +29,7 @@ export default function ChangeCountBtn({ isIncrement = false , id , newCount } :
   }
     return (
     <>
-        <Button onClick={handelCahngeCount} disabled={newCount == 0 || Loading} className={`cursor-pointer ${isIncrement ? "bg-green-500":"bg-red-500"} `}>
+        <Button onClick={handelCahngeCount} disabled={newCount == 0 || Loading} className={`cursor-pointer ${isIncrement ? "bg-green-500":"bg-red-500"} dark:text-white `}>
             {
     
                 Loading ? <ClipLoader size={10} color="white" />: isIncrement? "+":"-"

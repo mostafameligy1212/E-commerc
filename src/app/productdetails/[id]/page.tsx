@@ -35,7 +35,7 @@ export default async function ProductDetails(props : PageProps<'/productdetails/
         <div className="col-span-1 relative">
           <img
             src={product?.imageCover}
-            className="w-full block"
+            className="w-full block rounded-2xl"
             alt={product?.title}
           />
           <div className="absolute top-2 left-2">

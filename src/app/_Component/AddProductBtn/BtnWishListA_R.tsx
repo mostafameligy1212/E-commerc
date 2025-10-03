@@ -27,6 +27,7 @@ export default function BtnWishListA_R({id}:{id : string}) {
     }
 
     async function handelRemoveToWishList(){
+        isPending2(true);
 
         const reslut = await removeItemFromWishList(id);
                 if(reslut){
@@ -35,6 +36,8 @@ export default function BtnWishListA_R({id}:{id : string}) {
         else{
           errorMessage("Erorr occurd while Removeing (wish List)");
         }
+        isPending2(false);
+
 
     }
  
@@ -48,7 +51,7 @@ export default function BtnWishListA_R({id}:{id : string}) {
                 added ? 
                 <FaHeart onClick={()=>{handelRemoveToWishList();setAdded(false) }}  color='red' size={30} />
                 :
-                <FaRegHeart onClick={()=>{handelAddToWishList() ; setAdded(true)}} size={30}/>
+                <FaRegHeart className='dark:text-black' onClick={()=>{handelAddToWishList() ; setAdded(true)}} size={30}/>
             }
              
              

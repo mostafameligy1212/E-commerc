@@ -74,6 +74,7 @@ export default function LoginFrom() {
 
 
           <FormField
+        
     disabled={btnLogain}
     control={control}
     name="email"
@@ -104,7 +105,7 @@ export default function LoginFrom() {
         </FormLabel>
         <FormControl>
           { /* Your form field */}
-          <Input {...field} type='password' />
+          <Input  className='' {...field} type='password' />
         </FormControl>
         <FormDescription />
         <FormMessage />
@@ -116,7 +117,7 @@ export default function LoginFrom() {
    
 
 
-  <Button disabled={btnLogain} className=' bg-green-500 mt-3 cursor-pointer'>
+  <Button disabled={btnLogain} className=' bg-green-500 mt-3 cursor-pointer dark:text-white hover:bg-black dark:hover:border dark:hover:border-white '>
     {btnLogain? 
     
     <ClipLoader size={20} color="white" />
@@ -127,8 +128,10 @@ export default function LoginFrom() {
 
       </form>
 
-    <Link className='   text-green-500 underline pt-5 ' href="/ForgetPassword">ForgetPassword</Link>
-
+    <div className=" pt-5">
+    <Link className='   text-green-500 underline  ' href="/ForgetPassword">ForgetPassword</Link>
+ 
+    </div>
 </Form>
   )
 }

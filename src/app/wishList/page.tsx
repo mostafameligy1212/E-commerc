@@ -55,7 +55,7 @@ const {  products  } = await HandelGetUserWishList();
       <TableCell className="font-medium">
         {/* <h3>{item.product.title}</h3> */}
         <div className=" w-1/4 ">
-        <img src={item.imageCover||" "}  alt={item.title||" "} className=' w-full block'/>
+        <img src={item.imageCover||" "}  alt={item.title||" "} className=' w-full block rounded-2xl'/>
 
         </div>
       </TableCell>

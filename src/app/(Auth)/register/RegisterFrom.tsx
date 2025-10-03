@@ -160,7 +160,7 @@ export default function RegisterFrom() {
     )}
   />
 
-  <Button disabled={btnLogain} className=' bg-green-500 mt-3 cursor-pointer'>
+  <Button disabled={btnLogain} className=' dark:text-white hover:bg-black dark:hover:border dark:hover:border-white bg-green-500 mt-3 cursor-pointer'>
     {btnLogain? 
     
     <ClipLoader size={20} color="white" />

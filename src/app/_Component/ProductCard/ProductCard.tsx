@@ -41,10 +41,10 @@ export default function ProductCard({product} : ProductCardPropes) {
     } 
   
   return (
-        <div  className="border border-green-500 rounded-xl overflow-hidden p-2 bg-white relative">
+        <div  className="border border-green-500 rounded-xl overflow-hidden p-2 bg-white dark:bg-transparent relative transition-all duration-500">
           <Link href={`/productdetails/${product.id}`}>
                   
-                  <img src={product.imageCover} alt={product.title} className="w-full block" />
+                  <img src={product.imageCover} alt={product.title} className="w-full block rounded-2xl" />
                   <h2 className="line-clamp-1">{product.title}</h2>
                   <p className="text-green-500">{product.priceAfterDiscount ? 
                   <>
@@ -91,7 +91,7 @@ export default function ProductCard({product} : ProductCardPropes) {
             
           <AddProductBtn id={product.id} />
           </div>
-            <div className=" absolute top-2 right-2">
+            <div className=" absolute top-3 right-3">
               <BtnWishListA_R id={product.id}/>
             </div>
         </div>
